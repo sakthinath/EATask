@@ -11,3 +11,5 @@ UI Developed using SwiftUI.
 Band Profile:- Profile pic used Rectangle due to no Image 
 
 Added Readme on each file
+
+Unit test is performed in it. But small debug error is still There needs to find out. 
