@@ -27,8 +27,24 @@ final class EAInterviewTaskTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        viewModel.getbandDetails(homeService: HttpClientMockProtocol())
-        XCTAssertNotNil(viewModel.data)
+        
+//        Creating an expectation
+        let expectation = XCTestExpectation(description: "Fetch band details")
+        // Set up the mock service Implementation Class
+        let mockService = HttpClientMockProtocol()
+        
+        viewModel.getbandDetails(homeService: mockService)
+        // Wait for the expectation with a timeout
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    // Assuming the response is received and viewModel.data is set
+                    XCTAssertNotNil(self.viewModel.data)
+                    
+                    // Fulfill the expectation
+                    expectation.fulfill()
+                }
+                
+                // Wait for the expectation to be fulfilled or timeout
+                wait(for: [expectation], timeout: 3.0)
     }
 
 }
