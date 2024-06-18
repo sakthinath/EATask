@@ -46,5 +46,51 @@ final class EAInterviewTaskTests: XCTestCase {
                 // Wait for the expectation to be fulfilled or timeout
                 wait(for: [expectation], timeout: 3.0)
     }
+    
+    
+    func testGroupBandsByRecordLabel() {
+        //        Creating an expectation
+                let expectation = XCTestExpectation(description: "Fetch band details Error")
+                // Wait for the expectation with a timeout
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            // Assuming the response is received and viewModel.data is set
+                            
+                            let separatedData = self.viewModel.groupBandsByRecordLabel(from: mockData)
+                            
+                            XCTAssertEqual(separatedData.count, 10) // Adjust expected count based on your data
+                            // Fulfill the expectation
+                            expectation.fulfill()
+                        }
+                        
+                        // Wait for the expectation to be fulfilled or timeout
+                        wait(for: [expectation], timeout: 3.0)
+        }
+        
+        func testGetBandItems() {
+            //        Creating an expectation
+                    let expectation = XCTestExpectation(description: "Fetch band details Error")
+                    // Wait for the expectation with a timeout
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                // Assuming the response is received and viewModel.data is set
+                                 self.viewModel.getBandItems(item: mockData)
+                                
+                                XCTAssertEqual(self.viewModel.data?.count, 10) // Adjust expected count based on your data
+                                
+                                // Example assertions based on your data structure
+                                XCTAssertEqual(self.viewModel.data?[0].name, "")
+                                XCTAssertEqual(self.viewModel.data?[0].bands?.count ?? 0, 1)
+                                XCTAssertEqual(self.viewModel.data?[1].name, "ACR")
+                                XCTAssertEqual(self.viewModel.data?[1].bands?.count, 2)
+                                XCTAssertEqual(self.viewModel.data?[2].name, "Anti Records")
+                                XCTAssertEqual(self.viewModel.data?[2].bands?.count, 1)
+                                // Fulfill the expectation
+                                expectation.fulfill()
+                            }
+                            
+                            // Wait for the expectation to be fulfilled or timeout
+                            wait(for: [expectation], timeout: 3.0)
+            
+        }
+
 
 }

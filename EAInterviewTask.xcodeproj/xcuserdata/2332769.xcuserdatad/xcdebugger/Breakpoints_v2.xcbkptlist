@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "880147CD-AE21-4B55-8229-8222839FF319"
+            uuid = "DB29FAE6-878A-405B-8968-D95C9A58635E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EAInterviewTask/Home/View/ContentView.swift"
+            filePath = "EAInterviewTaskTests/Mockable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loadJson()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

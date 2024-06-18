@@ -40,6 +40,7 @@
 		B572F91F2C2037CA003AB7B1 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572F91C2C2037CA003AB7B1 /* Mockable.swift */; };
 		B572F9202C2037CA003AB7B1 /* BandResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B572F91D2C2037CA003AB7B1 /* BandResponse.json */; };
 		B572F9212C2037CA003AB7B1 /* MockImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572F91E2C2037CA003AB7B1 /* MockImplementation.swift */; };
+		B572F9252C21913A003AB7B1 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572F9242C21913A003AB7B1 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		B572F91C2C2037CA003AB7B1 /* Mockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		B572F91D2C2037CA003AB7B1 /* BandResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BandResponse.json; sourceTree = "<group>"; };
 		B572F91E2C2037CA003AB7B1 /* MockImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockImplementation.swift; sourceTree = "<group>"; };
+		B572F9242C21913A003AB7B1 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				B572F91C2C2037CA003AB7B1 /* Mockable.swift */,
 				B572F91E2C2037CA003AB7B1 /* MockImplementation.swift */,
 				B572F8BC2C1C43F2003AB7B1 /* EAInterviewTaskTests.swift */,
+				B572F9242C21913A003AB7B1 /* MockData.swift */,
 			);
 			path = EAInterviewTaskTests;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B572F8BD2C1C43F2003AB7B1 /* EAInterviewTaskTests.swift in Sources */,
+				B572F9252C21913A003AB7B1 /* MockData.swift in Sources */,
 				B572F9212C2037CA003AB7B1 /* MockImplementation.swift in Sources */,
 				B572F91F2C2037CA003AB7B1 /* Mockable.swift in Sources */,
 			);
