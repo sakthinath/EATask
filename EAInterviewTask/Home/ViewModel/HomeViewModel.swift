@@ -53,12 +53,41 @@ class HomeViewModel: Observable<ArtistResponseModel> {
 
     }
     
+    func groupBandsByRecordLabel(from artistResponse: [ArtistResponseModelItem]) -> [ArtistResponseModelItem]  {
+        var groupedBands: [String: [Band]] = [:]
+        var separatedData: [ArtistResponseModelItem] = []
+        for item in artistResponse {
+            guard let bands = item.bands else {
+                continue
+            }
+            
+            for band in bands {
+                // Use empty string if recordLabel is nil
+                let recordLabel = band.recordLabel ?? ""
+                
+                if groupedBands[recordLabel] == nil {
+                    groupedBands[recordLabel] = []
+                }
+                
+                groupedBands[recordLabel]?.append(Band(name: band.name, recordLabel: item.name))
+            }
+        }
+    
+        for (recordLabel, bands) in groupedBands {
+            
+            let separatedItem = ArtistResponseModelItem(name: recordLabel, bands: bands)
+            separatedData.append(separatedItem)
+        }
+        
+        return separatedData
+    }
+    
     func getBandItems(item: ArtistResponseModel){
-        self.data = item.sorted { $0.name ?? "" < $1.name ?? ""}
+        let dic = groupBandsByRecordLabel(from: item)
+        self.data = dic.sorted { $0.name ?? "" < $1.name ?? ""}
                     .map { event in
                         ArtistResponseModelItem(name: event.name, bands: event.bands?.sorted { $0.name ?? "" < $1.name ?? ""})
                     }
-        
     }
 }
 

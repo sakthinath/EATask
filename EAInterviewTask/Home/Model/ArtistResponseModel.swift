@@ -54,4 +54,15 @@ struct Band: Identifiable, Codable {
     let name, recordLabel: String?
 }
 
+struct FilteredBand: Decodable {
+    let name: String
+    let recordLabel: String?// Optional because not all bands have a recordLabel
+    let band: [BandEvent]
+}
+
+struct BandEvent: Decodable {
+    let name: String?
+    let bands: [Band]
+}
+
 typealias ArtistResponseModel = [ArtistResponseModelItem]

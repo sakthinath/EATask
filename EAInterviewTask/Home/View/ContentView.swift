@@ -27,7 +27,7 @@ struct ContentView: View {
                             
                             ForEach(viewModel.data ?? [], id: \.id) { item in
                                 Section {
-                                    Text("\(item.name ?? "No Band Name")")
+                                    Text("\((item.name?.isEmpty ?? true) ? "No Record Name" : item.name ?? "No Record Name")")
                                     ScrollView {
                                         LazyVStack(content: {
                                             ForEach(item.bands ?? [], id: \.id) { band in
