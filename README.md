@@ -10,6 +10,19 @@ Implemnation will have actual api call
 UI Developed using SwiftUI. 
 Band Profile:- Profile pic used Rectangle due to no Image 
 
+UI Render Performed Combine with State Properties. 
+Sorting used Higher order functions to increase the Performance.
+
+UI Part :- 
+Developed Using SwiftUI
+ * handled Loader
+ * Error message Hanlded
+ 
+
+Handled Two Types of Depency Injection:-
+* Initialize Injection
+* Method Injection
+
 Added Readme on each file
 
-Unit test is performed in it. 
+Unit test is performed As Async Operation Expectation.
